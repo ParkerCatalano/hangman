@@ -6,10 +6,15 @@
   display:none;
 }
 
-#guesses {
+#guesses, #guessed {
   float: right;
-  padding-right: 30%;
+  padding-right: 20%;
   font-size: 18px;
+}
+
+#guessed {
+  font-size: 40px;
+
 }
 
 #player2-input2 {

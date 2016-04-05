@@ -13,10 +13,13 @@
       <h1 class="jumbotron">Hangman</h1>
 
         <form id="player1-input">
-        <label for="player1-word">Enter your word:</label>
-        <input id="player1-word" type="text">
-          <button class="btn" type="submit" id="player1-button">Submit</button>
+          <label for="player1-word">Enter your word:</label>
+          <input id="player1-word" type="text">
+            <button class="btn" type="submit" id="player1-button">Submit</button>
         </form>
+
+        <div id = "wordToGuess">
+        </div>
 
         <img src = "img/gallows.png" id = "gallows">
         <img src = "img/1.png" id = "one">
@@ -28,6 +31,9 @@
 
       <div id="player2-forms">
         <p id = "guesses"><strong>You've guessed: </strong></p>
+        <br>
+        </br>
+        <p id = "guessed"></p>
         <form id="player2-input">
         <label for="player2-letter">Guess a letter:</label>
         <input id="player2-letter" type="text">
