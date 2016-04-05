@@ -1,0 +1,17 @@
+#player2-forms {
+  display: none;
+}
+
+#gallows, #one, #two, #three, #four, #five, #fullman{
+  display:none;
+}
+
+#guesses {
+  float: right;
+  padding-right: 30%;
+  font-size: 18px;
+}
+
+#player2-input2 {
+  padding-top: 5px;
+}
