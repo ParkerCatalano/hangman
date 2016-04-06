@@ -7,14 +7,18 @@ Word.prototype.inputtedArray = function() {
   return splitWord.replace(/[a-z]/gi,"_ ");
 }
 
+
 $(document).ready(function() {
+
   $("form#player1-input").submit(function(event) {
     var inputtedWord = $("input#player1-word").val();
-    var splitWord = inputtedWord.split("");
-    var emptyArray = [];
-    for (var i = 0; i < splitWord.length; i++) {
-      splitWord[i].push("_")
-      $("#wordToGuess").text(splitWord[i]);
+    var newWord = new Word(inputtedWord)
+    var splitWord = newWord.inputtedArray();
+    //var splitWord = inputtedWord.split("");
+    //var emptyArray = [];
+    //for (var i = 0; i < splitWord.length; i++) {
+      //splitWord[i].push("_")
+      $("#wordToGuess").text(splitWord);
       debugger;
     }
 
