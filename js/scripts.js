@@ -14,19 +14,14 @@ $(document).ready(function() {
     var inputtedWord = $("input#player1-word").val();
     var newWord = new Word(inputtedWord)
     var splitWord = newWord.inputtedArray();
-    //var splitWord = inputtedWord.split("");
-    //var emptyArray = [];
-    //for (var i = 0; i < splitWord.length; i++) {
-      //splitWord[i].push("_")
       $("#wordToGuess").text(splitWord);
-      debugger;
-    }
+
 
     $("#player1-input").hide();
     $("#gallows").show();
     $("#player2-forms").show();
 
-event.preventDefault();
+   event.preventDefault();
   });
 
   $("form#player2-input").submit(function(event) {
@@ -39,4 +34,15 @@ event.preventDefault();
   });
 
 
-});
+  $("form#player2-input2").submit(function(event) {
+    var inputtedWord = $("input#player1-word").val();
+    var guessedWord = $("input#player2-word").val();
+    if (inputtedWord === guessedWord) {
+      alert("You guessed it!");
+    } else {
+      alert("Keep Guessing!");
+    }
+  });
+
+    event.preventDefault();
+  });
