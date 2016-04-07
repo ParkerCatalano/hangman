@@ -20,3 +20,7 @@
 #player2-input2 {
   padding-top: 5px;
 }
+
+#wordToGuess {
+  font-size: 45px;
+}

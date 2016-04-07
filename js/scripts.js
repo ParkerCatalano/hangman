@@ -14,9 +14,8 @@ $(document).ready(function() {
     var inputtedWord = $("input#player1-word").val();
     var newWord = new Word(inputtedWord)
     var splitWord = newWord.inputtedArray();
-      $("#wordToGuess").text(splitWord);
 
-
+    $("#wordToGuess").text(splitWord);
     $("#player1-input").hide();
     $("#gallows").show();
     $("#player2-forms").show();
