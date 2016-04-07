@@ -7,6 +7,12 @@ Word.prototype.inputtedArray = function() {
   return splitWord.replace(/[a-z]/gi,"_ ");
 }
 
+Word.prototype.correctArray = function() {
+  newArray = [];
+  newArray.push(this.inputtedWord);
+  return newArray;
+}
+
 
 $(document).ready(function() {
 
@@ -20,12 +26,25 @@ $(document).ready(function() {
     $("#gallows").show();
     $("#player2-forms").show();
 
+
    event.preventDefault();
   });
 
   $("form#player2-input").submit(function(event) {
-    var guessedLetter = $("input#player2-letter").val();
-    $("#guessed").append(guessedLetter + "     ");
+  $("input#player2-letter").val("");
+  var inputtedWord = $("input#player1-word").val();
+  var guessedLetter = $("input#player2-letter").val();
+  var newArray = newWord.correctArray();
+  $("#guessed").append(guessedLetter + "     ");
+debugger;
+    for (var i = 0; i < newArray.length; i++) {
+      debugger;
+     if (newArray[i] === inputtedWord) {
+     } return splitWord }
+    console.log("hi");
+
+
+
     $("input#player2-letter").val("");
     $("input#player2-word").val("");
 
@@ -40,6 +59,7 @@ $(document).ready(function() {
       alert("You guessed it!");
     } else {
       alert("Keep Guessing!");
+      $("input#player2-word").val("");
     }
   });
 
