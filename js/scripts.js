@@ -106,11 +106,15 @@ $(document).ready(function() {
   $("form#player2-input2").submit(function(event) {
     var inputtedWord = $("input#inputtedWord").val();
     var guessedWord = $("input#player2-word").val();
+    $("#guessed").text(guessedWord + "     ");
     if (inputtedWord === guessedWord) {
       alert("You guessed it!");
+      $("#gallows").hide();
     } else {
       alert("You Lose!");
       $("input#player2-word").val("");
+      $("#gallows").hide();
+      $("#fullman").show();
     }
     event.preventDefault();
   });
