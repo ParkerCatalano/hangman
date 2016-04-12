@@ -48,7 +48,7 @@ Game.prototype.guessLetter = function(letter) {
 
 	if (!found) {
     guesses.push(letter);
-    $("#guessed").append(guesses + "     ");
+    $("#guessed").text(guesses + "     ");
   }
 }
 
@@ -102,4 +102,17 @@ $(document).ready(function() {
 
     event.preventDefault();
   });
+
+  $("form#player2-input2").submit(function(event) {
+    var inputtedWord = $("input#inputtedWord").val();
+    var guessedWord = $("input#player2-word").val();
+    if (inputtedWord === guessedWord) {
+      alert("You guessed it!");
+    } else {
+      alert("You Lose!");
+      $("input#player2-word").val("");
+    }
+    event.preventDefault();
+  });
+
 });
