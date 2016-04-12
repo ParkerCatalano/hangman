@@ -1,3 +1,5 @@
+var wrongGuesses = 0;
+
 var Game = function(word) {
   var board = [];
 
@@ -49,6 +51,8 @@ Game.prototype.guessLetter = function(letter) {
 	if (!found) {
     guesses.push(letter);
     $("#guessed").text(guesses + "     ");
+    wrongGuesses += 1;
+
   }
 }
 
@@ -83,10 +87,36 @@ $(document).ready(function() {
 
     var letter = $("input#player2-letter").val();
     $("input#player2-letter").val("");
+
     //this clears the form right? ok nice, way better
     // yeah, but you can still access the value from letter
     // so you still need to draw the word on the board
     game.guessLetter(letter);
+    if (wrongGuesses === 1) {
+      $("#gallows").hide();
+      $("#one").show();
+
+    }
+    if (wrongGuesses === 2) {
+      $("#two").show();
+      $("#one").hide();
+    }
+    if (wrongGuesses === 3) {
+      $("#three").show();
+      $("#two").hide();
+    }
+    if (wrongGuesses === 4) {
+      $("#four").show();
+      $("#three").hide();
+    }
+    if (wrongGuesses === 5) {
+      $("#five").show();
+      $("#four").hide();
+    }
+    if (wrongGuesses === 6) {
+      $("#fullman").show();
+      $("#five").hide();
+    }
 
     var complete = game.isComplete()
     var board =  game.drawBoard().join(' ');
