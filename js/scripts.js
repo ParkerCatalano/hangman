@@ -57,25 +57,27 @@ Game.prototype.isComplete = function() {
   return current === this.word; // if they are the same, the game is over and this returns true
 }
 
-Game.prototype.guessWord = function(word) {}
+Game.prototype.guessWord = function(word) {
+
+}
 
 $(document).ready(function() {
   // do all the things
 
   var game;
 
-  $("form#player1-input").submit(function(event) {
-    var inputtedWord = $("input#player1-word").val();
+  $("form#initialWord").submit(function(event) {
+    var inputtedWord = $("input#inputtedWord").val();
     game = new Game(inputtedWord);
 
-    $("#player1-input").hide();
+    $("#initialWord").hide();
     $("#gallows").show();
-    $("#player1-forms").show();
+    $("#player2-forms").show();
 
    event.preventDefault();
   });
 
-  $("form#player1-input2").submit(function(event) {
+  $("form#player2-input").submit(function(event) {
 
     var letter = $("input#player1-letter").val();
     $("input#player2-letter").val("");
@@ -85,15 +87,16 @@ $(document).ready(function() {
     game.guessLetter(letter);
 
     var complete = game.isComplete()
-    var board =  game.drawBoard().join('');
+    var board =  game.drawBoard().join(' ');
     $('#wordToGuess').text(board);
 
-    if (complete) {
-      alert('You guessed it!');
-    } else {
-      alert('Keep guessing!');
-      $('#guessed').text(game.guesses.join(' '));
-    }
+
+    //if (complete) {
+    //  alert('You guessed it!');
+    //} else {
+    //  alert('Keep guessing!');
+    //  $('#guessed').text(game.guesses.join(' '));
+  //  }
 
     event.preventDefault();
   });
