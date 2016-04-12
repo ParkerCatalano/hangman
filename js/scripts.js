@@ -48,6 +48,7 @@ Game.prototype.guessLetter = function(letter) {
 
 	if (!found) {
     guesses.push(letter);
+    $("#guessed").append(guesses + "     ");
   }
 }
 
@@ -74,12 +75,13 @@ $(document).ready(function() {
     $("#gallows").show();
     $("#player2-forms").show();
 
+
    event.preventDefault();
   });
 
   $("form#player2-input").submit(function(event) {
 
-    var letter = $("input#player1-letter").val();
+    var letter = $("input#player2-letter").val();
     $("input#player2-letter").val("");
     //this clears the form right? ok nice, way better
     // yeah, but you can still access the value from letter
