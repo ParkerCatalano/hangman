@@ -116,19 +116,13 @@ $(document).ready(function() {
     if (wrongGuesses === 6) {
       $("#fullman").show();
       $("#five").hide();
+      alert("GAME OVER")
     }
 
     var complete = game.isComplete()
     var board =  game.drawBoard().join(' ');
     $('#wordToGuess').text(board);
 
-
-    //if (complete) {
-    //  alert('You guessed it!');
-    //} else {
-    //  alert('Keep guessing!');
-    //  $('#guessed').text(game.guesses.join(' '));
-  //  }
 
     event.preventDefault();
   });
