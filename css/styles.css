@@ -24,3 +24,19 @@
 #wordToGuess {
   font-size: 45px;
 }
+
+#win {
+  height: 1000px;
+  text-align: center;
+  display: none;
+}
+
+#win h1 {
+  font-size: 500px;
+  text-shadow: 50px 50px #ffff4d;
+  color: #33cc33;
+}
+
+#lose {
+  display:none;
+}

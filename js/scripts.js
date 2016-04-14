@@ -123,7 +123,9 @@ $(document).ready(function() {
 
     var complete = game.isComplete()
     if (complete === true) {
-      alert("You win!");
+      $("#hangman").hide();
+      document.body.style.background = "url('img/hippodancing.gif')";
+      $("#win").show();
     }
     var board =  game.drawBoard().join(' ');
     $('#wordToGuess').text(board);
@@ -136,13 +138,20 @@ $(document).ready(function() {
     var guessedWord = $("input#player2-word").val();
     $("#guessed").text(guessedWord + "     ");
     if (inputtedWord === guessedWord) {
-      alert("You guessed it!");
       $('#wordToGuess').text(inputtedWord);
+      $("#hangman").hide();
+      document.body.style.background = "url('img/hippodancing.gif')";
+      $("#win").show();
     } else {
-      alert("You Lose!");
       $("input#player2-word").val("");
+      $("#one").hide();
+      $("#two").hide();
+      $("#three").hide();
+      $("#four").hide();
+      $("#five").hide();
       $("#gallows").hide();
-      $("#fullman").show();
+      $("#hangman").hide();
+      $("#lose").show();
     }
     event.preventDefault();
   });
