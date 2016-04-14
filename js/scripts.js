@@ -118,20 +118,13 @@ $(document).ready(function() {
       $("#five").hide();
       alert("GAME OVER")
     }
-    //debugger;
-    //for (var i = 0; i < results.length; i++){
-    //  if (results[i] === "_") {
-
-    //  } else {
-    //    alert("You win!")
-    //  }
-    //}
-
 
     var complete = game.isComplete()
+    if (complete === true) {
+      alert("You win!");
+    }
     var board =  game.drawBoard().join(' ');
     $('#wordToGuess').text(board);
-
 
     event.preventDefault();
   });
