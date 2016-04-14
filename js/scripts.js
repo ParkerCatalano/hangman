@@ -78,9 +78,11 @@ $(document).ready(function() {
     $("#initialWord").hide();
     $("#gallows").show();
     $("#player2-forms").show();
-
+    var board =  game.drawBoard().join(' ');
+    $('#wordToGuess').text(board);
 
    event.preventDefault();
+
   });
 
   $("form#player2-input").submit(function(event) {
@@ -135,7 +137,7 @@ $(document).ready(function() {
     $("#guessed").text(guessedWord + "     ");
     if (inputtedWord === guessedWord) {
       alert("You guessed it!");
-      $("#gallows").hide();
+      $('#wordToGuess').text(inputtedWord);
     } else {
       alert("You Lose!");
       $("input#player2-word").val("");
